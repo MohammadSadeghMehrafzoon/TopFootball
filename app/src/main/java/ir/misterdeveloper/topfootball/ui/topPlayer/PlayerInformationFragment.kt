@@ -1,7 +1,6 @@
 package ir.misterdeveloper.topfootball.ui.topPlayer
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -48,14 +47,13 @@ class PlayerInformationFragment : Fragment() {
         )[HomeViewModel::class.java]
 
 
-
-
         val networkChecker = NetworkChecker(requireContext())
         val network: Boolean = networkChecker.isInternetConnected
 
         if (!network) {
 
-            Toast.makeText(activity, getString(R.string.message_check_internet), Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, getString(R.string.message_check_internet), Toast.LENGTH_LONG)
+                .show()
 
         } else {
 
@@ -72,7 +70,11 @@ class PlayerInformationFragment : Fragment() {
 
             if (!network) {
 
-                Toast.makeText(activity, getString(R.string.message_check_internet), Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    activity,
+                    getString(R.string.message_check_internet),
+                    Toast.LENGTH_LONG
+                ).show()
                 binding.swipeRefresh.isRefreshing = false
 
             } else {
@@ -94,7 +96,7 @@ class PlayerInformationFragment : Fragment() {
     }
 
 
-   private fun getInformationPlayer(){
+    private fun getInformationPlayer() {
 
         when (PlayerInformationFragmentArgs.fromBundle(requireArguments()).playerName) {
 
@@ -112,34 +114,14 @@ class PlayerInformationFragment : Fragment() {
                             compositeDisposable.add(d)
                         }
 
-                        override fun onSuccess(matchResponse: PersonResponse) {
+                        override fun onSuccess(personResponse: PersonResponse) {
 
-                            binding.Name.text = matchResponse.person.name
-                            binding.dateOfBirth.text = matchResponse.person.dateOfBirth
-                            binding.nationality.text = matchResponse.person.nationality
-                            binding.position.text = matchResponse.person.position
-
-                            binding.playerMatcheRecycler.adapter =
-                                MatchAdapter(
-                                    requireContext().applicationContext,
-                                    matchResponse = matchResponse.matches,
-                                    requireActivity()
-                                )
-                            binding.playerMatcheRecycler.layoutManager = LinearLayoutManager(
-                                requireContext().applicationContext,
-                                RecyclerView.VERTICAL,
-                                false
-                            )
-
-                            // Gone Shimmer Effect
-                            shimmerFrameLayout?.stopShimmer()
-                            binding.shimmerViewMatches.visibility = View.GONE
+                            showData(personResponse)
 
                         }
 
                         override fun onError(e: Throwable) {
 
-                            Log.v("dd", "ddd")
 
                         }
 
@@ -158,34 +140,15 @@ class PlayerInformationFragment : Fragment() {
                             compositeDisposable.add(d)
                         }
 
-                        override fun onSuccess(matchResponse: PersonResponse) {
+                        override fun onSuccess(personResponse: PersonResponse) {
 
-                            binding.Name.text = matchResponse.person.name
-                            binding.dateOfBirth.text = matchResponse.person.dateOfBirth
-                            binding.nationality.text = matchResponse.person.nationality
-                            binding.position.text = matchResponse.person.position
+                            showData(personResponse)
 
-                            binding.playerMatcheRecycler.adapter =
-                                MatchAdapter(
-                                    requireContext().applicationContext,
-                                    matchResponse = matchResponse.matches,
-                                    requireActivity()
-                                )
-                            binding.playerMatcheRecycler.layoutManager = LinearLayoutManager(
-                                requireContext().applicationContext,
-                                RecyclerView.VERTICAL,
-                                false
-                            )
-
-                            // Gone Shimmer Effect
-                            shimmerFrameLayout?.stopShimmer()
-                            binding.shimmerViewMatches.visibility = View.GONE
 
                         }
 
                         override fun onError(e: Throwable) {
 
-                            Log.v("dd", "ddd")
 
                         }
 
@@ -205,34 +168,13 @@ class PlayerInformationFragment : Fragment() {
                             compositeDisposable.add(d)
                         }
 
-                        override fun onSuccess(matchResponse: PersonResponse) {
+                        override fun onSuccess(personResponse: PersonResponse) {
 
-                            binding.Name.text = matchResponse.person.name
-                            binding.dateOfBirth.text = matchResponse.person.dateOfBirth
-                            binding.nationality.text = matchResponse.person.nationality
-                            binding.position.text = matchResponse.person.position
-
-                            binding.playerMatcheRecycler.adapter =
-                                MatchAdapter(
-                                    requireContext().applicationContext,
-                                    matchResponse = matchResponse.matches,
-                                    requireActivity()
-                                )
-                            binding.playerMatcheRecycler.layoutManager = LinearLayoutManager(
-                                requireContext().applicationContext,
-                                RecyclerView.VERTICAL,
-                                false
-                            )
-
-                            // Gone Shimmer Effect
-                            shimmerFrameLayout?.stopShimmer()
-                            binding.shimmerViewMatches.visibility = View.GONE
-
+                            showData(personResponse)
                         }
 
                         override fun onError(e: Throwable) {
 
-                            Log.v("dd", "ddd")
 
                         }
 
@@ -253,34 +195,14 @@ class PlayerInformationFragment : Fragment() {
                             compositeDisposable.add(d)
                         }
 
-                        override fun onSuccess(matchResponse: PersonResponse) {
+                        override fun onSuccess(personResponse: PersonResponse) {
 
-                            binding.Name.text = matchResponse.person.name
-                            binding.dateOfBirth.text = matchResponse.person.dateOfBirth
-                            binding.nationality.text = matchResponse.person.nationality
-                            binding.position.text = matchResponse.person.position
-
-                            binding.playerMatcheRecycler.adapter =
-                                MatchAdapter(
-                                    requireContext().applicationContext,
-                                    matchResponse = matchResponse.matches,
-                                    requireActivity()
-                                )
-                            binding.playerMatcheRecycler.layoutManager = LinearLayoutManager(
-                                requireContext().applicationContext,
-                                RecyclerView.VERTICAL,
-                                false
-                            )
-
-                            // Gone Shimmer Effect
-                            shimmerFrameLayout?.stopShimmer()
-                            binding.shimmerViewMatches.visibility = View.GONE
+                            showData(personResponse)
 
                         }
 
                         override fun onError(e: Throwable) {
 
-                            Log.v("dd", "ddd")
 
                         }
 
@@ -300,34 +222,14 @@ class PlayerInformationFragment : Fragment() {
                             compositeDisposable.add(d)
                         }
 
-                        override fun onSuccess(matchResponse: PersonResponse) {
+                        override fun onSuccess(personResponse: PersonResponse) {
 
-                            binding.Name.text = matchResponse.person.name
-                            binding.dateOfBirth.text = matchResponse.person.dateOfBirth
-                            binding.nationality.text = matchResponse.person.nationality
-                            binding.position.text = matchResponse.person.position
-
-                            binding.playerMatcheRecycler.adapter =
-                                MatchAdapter(
-                                    requireContext().applicationContext,
-                                    matchResponse = matchResponse.matches,
-                                    requireActivity()
-                                )
-                            binding.playerMatcheRecycler.layoutManager = LinearLayoutManager(
-                                requireContext().applicationContext,
-                                RecyclerView.VERTICAL,
-                                false
-                            )
-
-                            // Gone Shimmer Effect
-                            shimmerFrameLayout?.stopShimmer()
-                            binding.shimmerViewMatches.visibility = View.GONE
+                            showData(personResponse)
 
                         }
 
                         override fun onError(e: Throwable) {
 
-                            Log.v("dd", "ddd")
 
                         }
 
@@ -338,7 +240,30 @@ class PlayerInformationFragment : Fragment() {
 
     }
 
+    fun showData(matchResponse: PersonResponse) {
 
+        binding.Name.text = matchResponse.person.name
+        binding.dateOfBirth.text = matchResponse.person.dateOfBirth
+        binding.nationality.text = matchResponse.person.nationality
+        binding.position.text = matchResponse.person.position
+
+        binding.playerMatcheRecycler.adapter =
+            MatchAdapter(
+                requireContext().applicationContext,
+                matchResponse = matchResponse.matches,
+                requireActivity()
+            )
+        binding.playerMatcheRecycler.layoutManager = LinearLayoutManager(
+            requireContext().applicationContext,
+            RecyclerView.VERTICAL,
+            false
+        )
+
+        // Gone Shimmer Effect
+        shimmerFrameLayout?.stopShimmer()
+        binding.shimmerViewMatches.visibility = View.GONE
+
+    }
 
 
 }
