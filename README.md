@@ -1,10 +1,10 @@
 # Android-with-Kotlin-java-MVVM-Retrofit-RXjava-Single Activity
 
-football API (Free)
+# football API (Free)
 https://www.football-data.org/
 
 
-Libraries used:
+# Libraries used:
 
 1. Rx java
 2. Navigation Component
