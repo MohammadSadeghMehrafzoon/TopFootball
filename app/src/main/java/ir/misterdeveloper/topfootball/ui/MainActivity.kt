@@ -23,18 +23,16 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.bottomNavigationView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.matchesFragment || destination.id == R.id.viewAllStandingFragment) {
+            if (destination.id == R.id.matchesFragment ||
+                destination.id == R.id.viewAllStandingFragment ||
+                destination.id == R.id.playerInformationFragment) {
                 activityMainBinding.bottomNavigationView.visibility = View.GONE
             } else {
                 activityMainBinding.bottomNavigationView.visibility = View.VISIBLE
             }
 
-            if (destination.id == R.id.playerInformationFragment) {
-                activityMainBinding.bottomNavigationView.visibility = View.GONE
-            } else {
-                activityMainBinding.bottomNavigationView.visibility = View.VISIBLE
-            }
         }
+
 
 
     }
