@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginTop="5dp"
+    app:cardCornerRadius="16dp"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="15dp"
+        android:layout_margin="8dp"
+        android:layout_height="100dp" >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:paddingBottom="8dp"
+            android:background="?attr/selectableItemBackground">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDate"
+                style="@style/BaseTextView.Bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="status or Date" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTime"
+                style="@style/BaseTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDate"
+                tools:text="22:30" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTeam1"
+                style="@style/BaseTextView"
+                android:layout_width="85dp"
+                android:layout_marginVertical="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTime"
+                tools:text="Man United" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewTeam1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewTeam1"
+                app:layout_constraintStart_toEndOf="@+id/textViewTeam1"
+                app:layout_constraintTop_toTopOf="@+id/textViewTeam1"
+                app:srcCompat="@drawable/default_crest" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewResultTeam1"
+                style="@style/BaseTextView.Bold"
+                android:layout_marginStart="16dp"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewTeam1"
+                app:layout_constraintEnd_toStartOf="@+id/tvSeparation"
+                app:layout_constraintStart_toEndOf="@+id/imageViewTeam1"
+                app:layout_constraintTop_toTopOf="@+id/imageViewTeam1"
+                tools:text="2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSeparation"
+                style="@style/BaseTextView.Bold"
+                android:text=":"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewResultTeam1"
+                app:layout_constraintEnd_toStartOf="@+id/textViewResultTeam2"
+                app:layout_constraintStart_toEndOf="@+id/textViewResultTeam1"
+                app:layout_constraintTop_toTopOf="@id/textViewResultTeam1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewResultTeam2"
+                style="@style/BaseTextView.Bold"
+                android:layout_marginEnd="16dp"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewTeam2"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewTeam2"
+                app:layout_constraintStart_toEndOf="@+id/tvSeparation"
+                app:layout_constraintTop_toTopOf="@+id/imageViewTeam2"
+                tools:text="2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewTeam2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewTeam2"
+                app:layout_constraintEnd_toStartOf="@+id/textViewTeam2"
+                app:layout_constraintTop_toTopOf="@+id/textViewTeam2"
+                app:srcCompat="@drawable/default_crest" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTeam2"
+                style="@style/BaseTextView"
+                android:layout_width="85dp"
+                android:layout_marginVertical="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTime"
+                tools:text="Barcelona" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

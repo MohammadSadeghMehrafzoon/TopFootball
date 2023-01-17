@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home_icon"
+        android:title="Home" />
+    <item
+        android:id="@+id/standigsFragment"
+        android:icon="@drawable/ic_table_icon"
+        android:title="Standigs" />
+    <item
+        android:id="@+id/topPlayerFragment"
+        android:icon="@drawable/ic_topplayer_icon"
+        android:title="TopPlayer" />
+</menu>

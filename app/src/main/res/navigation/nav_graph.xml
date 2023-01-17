@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="ir.misterdeveloper.topfootball.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            app:popUpToInclusive="true"
+            android:id="@+id/action_homeFragment_to_matchesFragment"
+            app:destination="@id/matchesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/standigsFragment"
+        android:name="ir.misterdeveloper.topfootball.ui.standings.StandingsFragment"
+        android:label="fragment_standigs"
+        tools:layout="@layout/fragment_standigs">
+
+        <action
+            app:popUpTo="@id/standigsFragment"
+            android:id="@+id/action_standigsFragment_to_viewAllStandingFragment"
+            app:destination="@id/viewAllStandingFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/topPlayerFragment"
+        android:name="ir.misterdeveloper.topfootball.ui.topPlayer.TopPlayerFragment"
+        android:label="fragment_top_player"
+        tools:layout="@layout/fragment_top_player" >
+        <action
+            app:popUpToInclusive="true"
+            android:id="@+id/action_topPlayerFragment_to_playerInformationFragment"
+            app:destination="@id/playerInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/matchesFragment"
+        android:name="ir.misterdeveloper.topfootball.ui.matches.MatchesFragment"
+        android:label="fragment_matches"
+        tools:layout="@layout/fragment_matches" >
+        <action
+            app:popUpTo="@id/homeFragment"
+            android:id="@+id/action_matchesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewAllStandingFragment"
+        android:name="ir.misterdeveloper.topfootball.ui.standings.ViewAllStandingFragment"
+        android:label="fragment_view_all_standing"
+        tools:layout="@layout/fragment_view_all_standing">
+        <action
+            app:popUpTo="@id/standigsFragment"
+            android:id="@+id/action_viewAllStandingFragment_to_standigsFragment2"
+            app:destination="@id/standigsFragment" />
+        <argument
+            android:name="nameLeague"
+            android:defaultValue="no-name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerInformationFragment"
+        android:name="ir.misterdeveloper.topfootball.ui.topPlayer.PlayerInformationFragment"
+        android:label="fragment_player_information"
+        tools:layout="@layout/fragment_player_information" >
+        <action
+            app:popUpTo="@id/topPlayerFragment"
+            android:id="@+id/action_topPlayerFragment_to_playerInformationFragment"
+            app:destination="@id/topPlayerFragment" />
+
+        <argument
+            android:name="playerName"
+            android:defaultValue="no-name"
+            app:argType="string" />
+    </fragment>
+</navigation>
