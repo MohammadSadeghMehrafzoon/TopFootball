@@ -15,6 +15,9 @@ Libraries used:
 7. shimmer - Shimmer Effect For Android Recyclerview
 
 
+# APK download link
+https://www.dropbox.com/s/977b0e5uy11czfo/topFootball.apk?dl=0
+
 
 # Screenshots
 ![rsz_incollage_20230118_023737854](https://user-images.githubusercontent.com/78638521/213033657-7868d5ef-4aaf-4de0-ade0-fc47a38f6635.jpg)
